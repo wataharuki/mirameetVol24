@@ -18,6 +18,11 @@ python -V
 3系が入っていることを確認
 ![image](https://user-images.githubusercontent.com/66664167/131998433-b1949745-ba65-46d4-b5c3-2ea2601d42a2.png)
 
+### ⑵Dockerのバージョン確認
+```
+docker version
+```
+
 
 ## 【Chapter2】GCPの設定と確認
 ### ⑴GCSバケット作成
@@ -47,6 +52,7 @@ python -V
 ![image](https://user-images.githubusercontent.com/66664167/132000704-9514ee5b-4f93-4d2c-bbdc-54fe071adfcf.png)
 ↓ダウンロード完了
 ![image](https://user-images.githubusercontent.com/66664167/132000791-964e946b-9917-4ea2-ad16-7a83b05c3c2e.png)
+
 #### 3.秘密鍵の配置
 ・配置先
 ```
@@ -56,7 +62,13 @@ mirameet_vol24\credential
 ```
 key.json
 ```
-#### 4.データセットの作成
+
+#### 4.BigQueryAPIの有効化
+![image](https://user-images.githubusercontent.com/66664167/132012749-301fe76d-fc7e-4c57-81ad-10cc0dd24e5b.png)
+![image](https://user-images.githubusercontent.com/66664167/132012713-982127fa-9d43-4d0f-923f-c0227ed42eaa.png)
+![image](https://user-images.githubusercontent.com/66664167/132012595-534dec08-5082-4bb6-a5ba-6ae6360c848a.png)
+
+#### 5.データセットの作成
 ![image](https://user-images.githubusercontent.com/66664167/132002556-7632d683-1946-4804-b894-18119b659b14.png)
 ↓作成完了
 ![image](https://user-images.githubusercontent.com/66664167/132002744-cd3b7837-24bb-4c6f-b7e1-a65fe61bb3ab.png)

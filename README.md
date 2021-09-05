@@ -22,16 +22,21 @@ python -V
 ```
 docker version
 ```
+★★★Docker手順
+```
+docker-compose up -d --build
+```
 
 
 ## 【Chapter2】GCPの設定と確認
 ### ⑴GCSバケット作成
-![image](https://user-images.githubusercontent.com/66664167/131999134-2fb48e06-2875-42ac-89e7-d48136c7d8d5.png)
+![image](https://user-images.githubusercontent.com/66664167/132120811-da7a4fbd-3872-4a26-bb26-1f023e9c61c3.png)
 
 ![image](https://user-images.githubusercontent.com/66664167/131999368-51c04a79-8add-47f6-9cdc-4bbea8a1ecbb.png)
 ![image](https://user-images.githubusercontent.com/66664167/131999409-4fa424e4-d705-4e93-9c8d-b28c0e4f6121.png)
 
 ↓作成完了
+![image](https://user-images.githubusercontent.com/66664167/132121232-2c896ad7-c91e-47f0-8c49-7e0f8f7ecf8d.png)
 ![image](https://user-images.githubusercontent.com/66664167/131999485-70e142b1-1e12-4bc3-918f-d1bb3491c425.png)
 
 ### ⑵GCS内権限設定
@@ -73,6 +78,52 @@ key.json
 ↓作成完了
 ![image](https://user-images.githubusercontent.com/66664167/132002744-cd3b7837-24bb-4c6f-b7e1-a65fe61bb3ab.png)
 
+#### 6.OperationObject.pyの編集
+・url_gs_example_csv
+![image](https://user-images.githubusercontent.com/66664167/132121160-a0454d09-fe83-4020-bad1-06d7bd7d026f.png)
+「gsutil URI」をコピーして置換
+（例）
+```
+url_gs_example_csv="gs://mira-example/gcs-example.csv"
+↓
+url_gs_example_csv="gs://sechico-mirameet_vol24/gcs-example.csv"
+```
+・bucket_name
+![image](https://user-images.githubusercontent.com/66664167/132121193-57c28457-3e65-404f-be9c-de3b0db28271.png)
+「名前」をコピーして置換
+（例）
+```
+bucket_name = "mira-example"
+↓
+bucket_name = "sechico-mirameet_vol24"
+```
+・project_id
+![image](https://user-images.githubusercontent.com/66664167/132121599-48e7f366-e197-4192-bed0-152372030482.png)
+```
+「プロジェクトID」をコピーして置換
+（例）
+project_id = "erudite-pride-323410"
+↓
+project_id = "sylvan-surf-322711"
+```
+・dataset_id
+![image](https://user-images.githubusercontent.com/66664167/132121662-f16bef70-ad6d-42d8-83a0-e2a9923df4f4.png)
+「データセットID」をコピーして置換
+（例）
+```
+bucket_name = "mira_vol24"
+↓
+bucket_name = "sechico_0905"
+```
+・table_id
+
+「テーブルID」をコピーして置換
+（例）
+```
+bucket_name = "mira-example"
+↓
+bucket_name = "sechico-mirameet_vol24"
+```
 
 ***
 ## 【Chapter3】各処理の実行

@@ -78,7 +78,20 @@ key.json
 ↓作成完了
 ![image](https://user-images.githubusercontent.com/66664167/132002744-cd3b7837-24bb-4c6f-b7e1-a65fe61bb3ab.png)
 
-#### 6.OperationObject.pyの編集
+#### 6.テーブルの作成
+![image](https://user-images.githubusercontent.com/66664167/132121906-a2b3cbad-1257-487b-a7ce-48587069c20d.png)
+\mirameet_vol24\sql\mira_vol24.sql
+をご自身の作成したデータセットIDに置換してクエリ実行
+（例）
+```
+CREATE TABLE mira_vol24.mira_example　～～～
+↓
+CREATE TABLE sechico_0905.mira_example　～～～
+```
+↓実行完了
+![image](https://user-images.githubusercontent.com/66664167/132121884-87f1099c-207f-4799-9f9d-7f8c969a7e7c.png)
+
+#### 7.OperationObject.pyの編集
 ・url_gs_example_csv
 ![image](https://user-images.githubusercontent.com/66664167/132121160-a0454d09-fe83-4020-bad1-06d7bd7d026f.png)
 「gsutil URI」をコピーして置換
@@ -111,19 +124,34 @@ project_id = "sylvan-surf-322711"
 「データセットID」をコピーして置換
 （例）
 ```
-bucket_name = "mira_vol24"
+dataset_id = "mira_vol24"
 ↓
-bucket_name = "sechico_0905"
+dataset_id = "sechico_0905"
 ```
-・table_id
-
+・table_id　←テーブル作成時のクエリから変えている場合
+![image](https://user-images.githubusercontent.com/66664167/132121926-04f139db-d4c7-40d0-a0cf-7f915a64ab6b.png)
 「テーブルID」をコピーして置換
 （例）
 ```
-bucket_name = "mira-example"
+table_id = "mira-example"
 ↓
-bucket_name = "sechico-mirameet_vol24"
+table_id = "mira-example"　←テーブル作成時のクエリ
 ```
 
 ***
 ## 【Chapter3】各処理の実行
+#### 1.カレントディレクトリの移動
+```
+cd　～～～\mirameet_vol24
+```
+
+#### 2.OperationObject.pyの実行
+```
+python OperationObject.py
+```
+![image](https://user-images.githubusercontent.com/66664167/132122033-04159a91-7e40-4f5c-bcff-71590c6e5271.png)
+
+#### 3. GcsUploader01.pyの実行
+```
+python GcsUploader01.py
+```

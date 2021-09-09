@@ -1,9 +1,9 @@
 import os
-import OperationOject # 操作対象の設定情報取得
+import OperationObject # 操作対象の設定情報取得
 from google.cloud import storage
 
 # GCS認証設定
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = OperationOject.GOOGLE_APPLICATION_CREDENTIALS
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = OperationObject.GOOGLE_APPLICATION_CREDENTIALS
 
 # GCSクライアント変数宣言
 client = storage.Client()

@@ -9,12 +9,12 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = OperationOject.GOOGLE_APPLICATION
 client = storage.Client()
 
 # GCSバケット取得
-bucket = client.get_bucket(OperationOject.bucket_name)
+bucket = client.get_bucket(OperationObject.bucket_name)
 
 # CSVファイルアップロード
-blob = bucket.blob(os.path.basename(OperationOject.source_file_name))
-blob.upload_from_filename(OperationOject.source_file_name)
+blob = bucket.blob(os.path.basename(OperationObject.source_file_name))
+blob.upload_from_filename(OperationObject.source_file_name)
 
 print('File {} uploaded to {}.'.format(
-    OperationOject.source_file_name,
+    OperationObject.source_file_name,
     bucket))

@@ -1,13 +1,13 @@
 import os
-import OperationOject # 操作対象の設定情報取得
+import OperationObject # 操作対象の設定情報取得
 from google.cloud import bigquery
 
 # GCS認証設定
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = OperationOject.GOOGLE_APPLICATION_CREDENTIALS
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = OperationObject.GOOGLE_APPLICATION_CREDENTIALS
 
 # テーブルIDの取得
-client = bigquery.Client(OperationOject.project_id)
-table_id = client.dataset(OperationOject.dataset_id).table(OperationOject.table_id)
+client = bigquery.Client(OperationObject.project_id)
+table_id = client.dataset(OperationObject.dataset_id).table(OperationObject.table_id)
 
 # テーブル設定宣言
 job_config = bigquery.LoadJobConfig(
@@ -26,7 +26,7 @@ job_config.write_disposition = bigquery.WriteDisposition.WRITE_TRUNCATE
 
 # GSバケットをロードし、テーブルに登録
 load_job = client.load_table_from_uri(
-    OperationOject.url_gs_example_csv, table_id, job_config=job_config
+    OperationObject.url_gs_example_csv, table_id, job_config=job_config
 )  # Make an API request.
 
 load_job.result()  # Waits for the job to complete.
